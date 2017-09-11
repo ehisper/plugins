@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <div class="form-group">
+                    <label for="" class="col-md-3 control-label">籍贯</label>
+                    <div class="col-md-5" id="pcd">
+                        <select name="tc_province" id="tc_province" class="form-control input-sm" data-id="{{tc_province}}">
+                            <option value="">请选择省份</option>
+                        </select>
+                        <select name="tc_city" id="tc_city" class="form-control input-sm" data-id="{{tc_city}}">
+                            <option value="">请选择城市</option>
+                        </select>
+                        <select name="tc_district" id="tc_district" class="form-control input-sm" data-id="{{tc_district}}">
+                            <option value="">请选择区县</option>
+                        </select>
+                    </div>
+                </div>
+    <script>
+    	// 省市区县选择
+			$('#pcd').region({
+				url: '/public/assets/jquery-region/region.json'
+			});
+    </script>
+    </body>
+</html>
