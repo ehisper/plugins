@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    span {
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+      font-size: 24px;
+      line-height: 30px;
+      border: 1px solid darkgoldenrod;
+      color: red
+    }
+
+    body {
+      padding: 200px;
+      text-align: center;
+      background: yellowgreen !important;
+      color: yellow;
+      font-size: 24px
+    }
+
+    span {
+      display: inline-block;
+      width: 80px;
+      height: 30px;
+      font-size: 24px;
+      line-height: 30px;
+      border: 1px solid darkgoldenrod;
+      color: red
+    }
+
+    body {
+      padding: 200px;
+      text-align: center;
+      background: #000
+    }
+
+    h2 {
+      color: orange;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>固定时间倒计时</h2>
+  <span id="box1"></span>
+  <span id="box2"></span>
+  <span id="box3"></span><br/>
+  <h2>相对系统时间倒计时</h2>
+  <span id="box4"></span>
+  <span id="box5"></span>
+  <span id="box6"></span><br/>
+  <h2>无定时显示系统时间</h2>
+  <span id="box7"></span>
+  <span id="box8"></span>
+  <span id="box9"></span><br>
+  <h2>全部参数</h2>
+  <span id="box10"></span>年
+  <span id="box11"></span>月
+  <span id="box12"></span>日
+  <span id="box13"></span>时
+  <span id="box14"></span>分
+  <span id="box15"></span>秒 &nbsp;&nbsp;星期<span id="box16"></span><br>
+
+
+
+
+  <script src="js/countDown-master-es5.js"></script>
+  <script>
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+    var box3 = document.getElementById('box3');
+    var box4 = document.getElementById('box4');
+    var box5 = document.getElementById('box5');
+    var box6 = document.getElementById('box6');
+    var box7 = document.getElementById('box7');
+    var box8 = document.getElementById('box8');
+    var box9 = document.getElementById('box9');
+    var box10 = document.getElementById('box10');
+    var box11 = document.getElementById('box11');
+    var box12 = document.getElementById('box12');
+    var box13 = document.getElementById('box13');
+    var box14 = document.getElementById('box14');
+    var box15 = document.getElementById('box15');
+    var box16 = document.getElementById('box16');
+
+    console.log(countDown().init());
+    console.log(countDown().init('10m33s')); //0天0时10分32秒
+    console.log(countDown().init([2017, 9, 20]));
+
+    console.log(countDown().init('55m', {
+      hh: box1,
+      min: box2,
+      ss: box3
+    }, function () {
+      alert(1)
+    })); //0天0时21分5秒
+    console.log(countDown().init([2017, 10, 1, 9, 21], {
+      hh: box4,
+      min: box5,
+      ss: box6
+    }, function () {
+      alert(1)
+    }));
+    console.log(countDown().init({
+      hh: box7,
+      min: box8,
+      ss: box9
+    }));
+    console.log(countDown().init({
+      yy: box10,
+      mo: box11,
+      dd: box12,
+      hh: box13,
+      min: box14,
+      ss: box15,
+      ww: box16
+    }));
+
+    setInterval(function () {
+      console.log(countDown().init())
+    }, 1000)
+  </script>
+  </script>
+</body>
+
+</html>
